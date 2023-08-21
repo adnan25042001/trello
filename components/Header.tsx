@@ -33,6 +33,10 @@ const Header = () => {
                         </button>
                     </form>
 
+                    {/* <form className="flex items-center space-x-3 bg-white">
+
+                    </form> */}
+
                     {/* Avatar */}
                     <Avatar
                         name="Adnan Hussain"
