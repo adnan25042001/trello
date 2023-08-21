@@ -8,7 +8,7 @@ import GPTSuggestion from "./GPTSuggestion";
 const Header = () => {
     return (
         <header>
-            <div className="flex flex-col md:flex-row items-center py-5 px-3 md:px-5 bg-gray-500/10 rounded-b-2xl">
+            <div className="flex flex-col md:flex-row items-center py-5 px-2 md:px-5 bg-gray-500/10 rounded-b-2xl">
                 <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-pink-400 to-[#0055d1] rounded-md filter blur-3xl opacity-50 -z-50"></div>
 
                 <Image
@@ -19,10 +19,10 @@ const Header = () => {
                     className="w-36 md:w-48 pb-6 md:pb-0 object-contain"
                 />
 
-                <div className="flex items-center space-x-4 flex-1 justify-end w-full">
+                <div className="flex items-center space-x-3 flex-1 justify-end w-full">
                     {/* Search Bar */}
-                    <form className="flex items-center space-x-5 bg-white rounded-md p-1 shadow-md flex-1 md:flex-initial">
-                        <MagnifyingGlassIcon className="h-6 w-6 text-gray-400" />
+                    <form className="flex items-center space-x-1 bg-white rounded-md p-1 shadow-md flex-1 md:flex-initial">
+                        <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
                         <input
                             type="text"
                             placeholder="Search"
@@ -33,14 +33,10 @@ const Header = () => {
                         </button>
                     </form>
 
-                    {/* <form className="flex items-center space-x-3 bg-white">
-
-                    </form> */}
-
                     {/* Avatar */}
                     <Avatar
                         name="Adnan Hussain"
-                        size="50"
+                        size="46"
                         round
                         color="#0055d1"
                     />
