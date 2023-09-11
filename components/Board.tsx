@@ -4,6 +4,8 @@ import { useBoardStore } from "@/store/BoardStore";
 import { useEffect, useState } from "react";
 import { DragDropContext, DropResult, Droppable } from "react-beautiful-dnd";
 import Column from "./Column";
+import Image from "next/image";
+import loader from "@/images/grid.svg";
 
 const Board = () => {
     const [board, getBoard, setBoardState, updateTodoInDB] = useBoardStore(
@@ -109,11 +111,23 @@ const Board = () => {
             >
                 {(provided) => (
                     <div
-                        className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-7xl mx-auto px-2 py-4"
+                        className={`${
+                            !Array.from(board.columns.entries()).length
+                                ? "flex items-center justify-center"
+                                : "grid grid-cols-1 md:grid-cols-3"
+                        }  gap-5 max-w-7xl mx-auto px-2 py-4`}
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                     >
-                        {
+                        {!Array.from(board.columns.entries()).length ? (
+                            <Image
+                                src={loader}
+                                alt="loader"
+                                height={50}
+                                width={50}
+                                className="mx-auto self-center mt-20"
+                            />
+                        ) : (
                             /* Rendring all the columns */
                             Array.from(board.columns.entries()).map(
                                 ([id, column], index) => (
@@ -125,7 +139,7 @@ const Board = () => {
                                     />
                                 )
                             )
-                        }
+                        )}
                     </div>
                 )}
             </Droppable>
