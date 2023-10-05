@@ -7,7 +7,7 @@ import google from "@/images/google.png";
 import microsoft from "@/images/microsoft.png";
 import apple from "@/images/apple.png";
 import slack from "@/images/slack.png";
-import { ID, account, client } from "@/appwrite";
+// import { ID, account, client } from "@/appwrite";
 
 const buttonList = [
     { name: "Google", img: google },
@@ -17,17 +17,17 @@ const buttonList = [
 ];
 
 const Signup = () => {
-    account
-        .create(ID.unique(), "adnan@gmail.com", "adnan123", "Adnan Hussain")
-        .then((data) => console.log(data))
-        .catch((err) => console.log(err));
+    // account
+    //     .create(ID.unique(), "adnan@gmail.com", "adnan123", "Adnan Hussain")
+    //     .then((data) => console.log(data))
+    //     .catch((err) => console.log(err));
 
-    client.subscribe("files", (response) => {
-        if (response.events.includes("buckets.*.files.*.create")) {
-            // Log when a new file is uploaded
-            console.log(response.payload);
-        }
-    });
+    // client.subscribe("files", (response) => {
+    //     if (response.events.includes("buckets.*.files.*.create")) {
+    //         // Log when a new file is uploaded
+    //         console.log(response.payload);
+    //     }
+    // });
 
     return (
         <div className="relative h-[100vh] overflow-y-auto">
